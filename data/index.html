@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>在线教育产品官网</title>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+        }
+        
+        .tab {
+            background-color: #f5f5f5;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .tab.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .course-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部导航 -->
+        <ul class="tabs">
+            <li class="tab active" onclick="openTab(event, 'home')">首页</li>
+            <li class="tab" onclick="openTab(event, 'shizhan')">实战课</li>
+            <li class="tab" onclick="openTab(event, 'xitili')">体系课</li>
+            <li class="tab" onclick="openTab(event, 'about')">关于我们</li>
+        </ul>
+
+        <!-- 内容区域 -->
+        <div id="home" class="tab-content active">
+            <h1>热门课程</h1>
+            <div class="course-card">
+                <h3>Python基础入门</h3>
+                <p>适合零基础学习者的全面指南</p>
+                <strong>价格：免费</strong>
+            </div>
+
+            <h2>上新课程</h2>
+            <div class="course-card">
+                <h3>机器学习实战</h3>
+                <p>从理论到实践的全栈教程</p>
+                <strong>价格：$99</strong>
+            </div>
+
+            <h2>爆款课程</h2>
+            <div class="course-card">
+                <h3>数据分析师之路</h3>
+                <p>成为数据专家的直通车</p>
+                <strong>价格：$149</strong>
+            </div>
+        </div>
+
+        <div id="about" class="tab-content">
+            <h2>联系我们</h2>
+            <table>
+                <tr><th>地址:</th><td>北京市海淀区XXX路1号</td></tr>
+                <tr><th>电话:</th><td>+86 10-5555 8888</td></tr>
+                <tr><th>邮箱:</th><td>contact@edusite.com</td></tr>
+            </table>
+        </div>
+
+        <script>
+            function openTab(evt, tabName) {
+                var i, tabContent, tabLinks;
+                
+                tabContent = document.getElementsByClassName("tab-content");
+                for (i = 0; i < tabContent.length; i++) {
+                    tabContent[i].style.display = "none";
+                }
+
+                tabLinks = document.getElementsByClassName("tab");
+                for (i = 0; i < tabLinks.length; i++) {
+                    tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+                }
+
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+    </div>
+</body>
+</html>

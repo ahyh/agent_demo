@@ -1,0 +1,9 @@
+# 安装包
+pip install openai
+pip install langchain
+pip install langchain_ollama
+pip install langchain_openai
+pip install langchain_experimental
+
+# 需要API_KEY，本项目中使用SILICONFLOW_API_KEY，https://cloud.siliconflow.cn
+# 将API_KEY配置在环境变量中

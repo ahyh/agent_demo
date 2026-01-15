@@ -9,7 +9,7 @@ from langchain_ollama.chat_models import ChatOllama
 local_qwen = ChatOllama(model="deepseek-r1:14b")
 
 llm = ChatOpenAI(
-    model="Qwen/Qwen3-8B",
+    model="deepseek-ai/DeepSeek-R1",
     api_key=os.getenv("SILICONFLOW_API_KEY"),
     base_url="https://api.siliconflow.cn",
     streaming=True,
